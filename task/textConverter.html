@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Converter</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border: none;
+      }
+      body {
+        background: url(../images/blob-scene-haikei.svg) no-repeat center
+          center/cover;
+      }
+      .parent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin: 10% auto;
+      }
+      #input {
+        height: 100px;
+        width: 90%;
+        border-radius: 20px;
+        font-size: 50px;
+        background-color: wheat;
+      }
+      #numbers {
+        display: inline-block;
+        background-color: #000000;
+        color: wheat;
+        font-size: 20px;
+        padding: 10px 50px;
+        border-radius: 40px;
+        box-shadow: 0px 0px 13px 0px rgba(255, 255, 255, 1);
+      }
+      button {
+        padding: 20px 30px;
+        border-radius: 30px;
+        background-color: #fde2ff;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+          rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+          rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+          rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+          rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+          rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      }
+      .button-1 {
+        display: flex;
+        gap: 20px;
+      }
+      .button-2 {
+        display: flex;
+        gap: 20px;
+      }
+      .extra {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 10px;
+        width: 100%;
+      }
+      .far-input {
+        border-radius: 20px;
+        height: 50px;
+        width: 40%;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <input type="text" name="" id="input" />
+      <div class="extra">
+        <input type="text" name="" id="far-input" class="far-input" />
+        <input type="text" name="" id="far1-input" class="far-input" />
+        <span id="numbers">WORD / CHARACTER COUNT</span>
+      </div>
+      <div class="button-1">
+        <button onclick="upperCase()">UPPERCASE</button>
+        <button onclick="lowerCase()">LOWERCASE</button>
+        <button onclick="trim()">TRIM</button>
+        <button onclick="wordCount()">WORD COUNT</button>
+      </div>
+      <div class="button-2">
+        <button onclick="spaceRemove()">SPACE REMOVE</button>
+        <button onclick="charCount()">CHARACTER COUNT</button>
+        <button onclick="far()">FIND AND REPLACE</button>
+      </div>
+    </div>
+    <script>
+      //uppercase
+
+      function upperCase() {
+        let a = document.getElementById("input").value;
+        document.getElementById("input").value = a.toUpperCase();
+      }
+
+      //lowecase
+
+      function lowerCase() {
+        let b = document.getElementById("input").value;
+        document.getElementById("input").value = b.toLowerCase();
+      }
+
+      //trim
+
+      function trim() {
+        let c = document.getElementById("input").value;
+        document.getElementById("input").value = c.trim();
+      }
+
+      //word count
+
+      function wordCount() {
+        let d = document.getElementById("input").value;
+        document.getElementById("numbers").innerText = d
+          .trim()
+          .split(/\s+/).length;
+      }
+
+      //spaceremove
+
+      function spaceRemove() {
+        let e = document.getElementById("input").value;
+        document.getElementById("input").value = e.split(" ").join("");
+      }
+
+      //Char count
+
+      function charCount() {
+        let f = document.getElementById("input").value;
+        document.getElementById("numbers").innerText = f.trim().length;
+      }
+
+      //far
+
+      function far() {
+        let g = document.getElementById("input").value;
+        let h = document.getElementById("far-input").value;
+        let i = document.getElementById("far1-input").value;
+        document.getElementById("input").value = g.replace(h, i);
+      }
+    </script>
+  </body>
+</html>
