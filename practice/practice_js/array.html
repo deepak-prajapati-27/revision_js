@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <h1>ARRAY</h1>
+    <p>storing a collection of multiple data under a single variables</p>
+    <script>
+      let cash = [1223, 8030, 5330, 20, 72330, 32390];
+      let online = [20, 1000, 29393, 12223, 334556];
+      console.log(cash);
+      console.log(online);
+      console.log(cash[2]); //here the counting starts from 0
+      console.log(online[4]);
+      console.log(typeof cash);
+      console.log(cash.concat(400)); //here new add key value at the end
+      let total = cash.concat(online);
+      console.log(total);
+      console.log(cash.indexOf(72330)); // here it will show on which number the it is
+      console.log(online.join("recieve ")); //here recieve will be written in between of the numbers
+      console.log(total.indexOf(20)); // here the first 20 will come
+      console.log(total.lastIndexOf(20)); // here the last 20 will come
+      console.log(total.push(2020)); // here in the end this new value will be added
+      console.log(total);
+      console.log(total.pop()); // here the last value is removed
+      console.log(total);
+      console.log(total.shift()); //here the first value is removed
+      console.log(total);
+      console.log(total.unshift(2)); //here the new value or the old shift value be added in the front
+      console.log(total);
+      console.log(total.reverse()); //here the array is reversed from last to first
+      console.log(total.sort()); //here the first small digit of every number will come first
+    </script>
+  </body>
+</html>
